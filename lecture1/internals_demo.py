@@ -9,7 +9,7 @@ code = "x = 5 + 3"
 
 print("== Tokens ==")
 for token in tokenize.generate_tokens(io.StringIO(code).readline):
-    print(token)
+    print(tokenize.tok_name[token.type], repr(token.string))
 
 print("== Abstract syntax tree ==")
 print(ast.dump(ast.parse(code), indent=2))
